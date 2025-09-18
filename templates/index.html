@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CaptiFy - Caption Generator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #000000, #1a1a1a);
+      color: #f2f2f2;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 40px;
+      color: #00ffc3;
+      letter-spacing: 1px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-weight: 400;
+      color: #cccccc;
+    }
+
+    form {
+      background: #121212;
+      display: inline-block;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 255, 195, 0.3);
+      animation: slideUp 1s ease-in-out;
+    }
+
+    input[type="file"] {
+      margin: 15px 0;
+      padding: 8px;
+      background: #222;
+      border: 1px solid #444;
+      border-radius: 8px;
+      color: #ddd;
+      cursor: pointer;
+    }
+
+    label {
+      margin: 5px 0;
+      display: inline-block;
+      color: #bbb;
+    }
+
+    input[type="radio"] {
+      margin: 10px;
+      accent-color: #00ffc3;
+    }
+
+    button {
+      background: #00ffc3;
+      color: black;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background: #00d4a0;
+      transform: scale(1.05);
+      box-shadow: 0px 0px 15px rgba(0, 255, 195, 0.6);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>CaptiFy 🎬</h1>
+  <h2>Upload Video & Generate Smart Captions</h2>
+  
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="video" accept="video/*" required><br>
+
+    <label><input type="radio" id="sentence" name="mode" value="sentence" checked> Sentence (Normal)</label><br>
+    <label><input type="radio" id="word" name="mode" value="word"> Word-by-Word (Reel Style)</label><br>
+
+    <button type="submit">Upload & Generate</button>
+  </form>
+</body>
+</html>
